@@ -1,0 +1,19 @@
+extend type NetworkPerformanceCounterType {
+  performance(
+    startTime: Date
+    endTime: Date
+    sourceType: NetworkPerfDataSourceType
+  ): [LinearNumberDataSet!]!
+    @delegate(
+      schema: "network"
+      path: "metricsByCustomer(customer: $scopedContextData:customer).device(counter: $fields:counter, hostname: $fields:hostname, instance: $fields:interfaceName, location: $fields:location).performance(startTime: $arguments:startTime, endTime: $arguments:endTime, sourceType: $arguments:sourceType, unit: $fields:unit)"
+    )
+}
+
+extend type NetworkAvailabilityCounterType {
+  availability(month: Date): Availability
+    @delegate(
+      schema: "network"
+      path: "metricsByCustomer(customer: $scopedContextData:customer).device(counter: $fields:serviceName, hostname: $fields:hostname, location: $fields:location).availability(month: $arguments:month, displayLastMonth: true, threshold: $fields:threshold)"
+    )
+}
