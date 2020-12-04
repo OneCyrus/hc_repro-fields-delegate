@@ -20,7 +20,7 @@ type LinearNumberValue {
 }
 
 type NetworkCustomer {
-  device(hostname: String! counter: String! instance: String location: String): NetworkDevice!
+  device(hostname: String counter: String instance: String location: String): NetworkDevice!
 }
 
 type NetworkDevice {

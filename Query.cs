@@ -14,9 +14,9 @@ namespace repro_fields_delegate
 
     public class NetworkAvailabilityCounterType
     {
-        public string? ServiceName { set; get; }
-        public string? Location { set; get; }
-        public string? Hostname { set; get; }
-        public double? Threshold { get; set; }
+        public string ServiceName { set; get; } = "cqwer";
+        public string Location { set; get; } = "cqwer";
+        public string Hostname { set; get; } = "cqwer";
+        public double Threshold { get; set; } = 10;
     }
 }
